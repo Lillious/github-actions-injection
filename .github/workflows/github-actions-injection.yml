@@ -7,10 +7,6 @@ on:
                 description: 'The input to pass to the workflow'
                 type: string
                 required: true
-            some_other_input:
-                description: 'Another input to pass to the workflow'
-                required: true
-                type: string
 
 jobs:
     injectable_job:
@@ -18,4 +14,4 @@ jobs:
         steps:
             - name: Injected Step
               run: |
-                echo "Injected Step: ${{ inputs.injectable_input }} ${{ inputs.some_other_input }}"
+                echo "Injected Step: ${{ inputs.injectable_input }}"
