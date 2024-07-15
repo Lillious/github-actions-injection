@@ -1,0 +1,20 @@
+name: GitHub Actions Injection Action
+
+on:
+    workflow_dispatch:
+        inputs:
+            injectable_input:
+                description: 'The input to pass to the workflow'
+                type: string
+                required: true
+            some_other_input:
+                description: 'Another input to pass to the workflow'
+                required: true
+                type: string
+
+jobs:
+    injectable_job:
+        uses: ./.github/workflows/github-actions-injection.yml
+        with:
+            injectable_input: ${{ github.event.inputs.injectable_input }}
+            some_other_input: ${{ github.event.inputs.some_other_input }}

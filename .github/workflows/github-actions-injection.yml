@@ -1,0 +1,21 @@
+name: GitHub Actions Injection
+
+on:
+    workflow_call:
+        inputs:
+            injectable_input:
+                description: 'The input to pass to the workflow'
+                type: string
+                required: true
+            some_other_input:
+                description: 'Another input to pass to the workflow'
+                required: true
+                type: string
+
+jobs:
+    injectable_job:
+        runs-on: windows-latest
+        steps:
+            - name: Injected Step
+              run: |
+                echo Injected Step: ${{ github.event.workflow_call.inputs.injectable_input }}
