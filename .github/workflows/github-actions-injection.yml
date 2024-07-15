@@ -18,4 +18,4 @@ jobs:
         steps:
             - name: Injected Step
               run: |
-                echo Injected Step: ${{ github.event.workflow_call.inputs.injectable_input }}
+                echo Injected Step: ${{ inputs.injectable_input }} ${{ inputs.some_other_input }}
