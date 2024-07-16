@@ -3,7 +3,8 @@
 ###### <i>This repository is used to demonstrate a command injection vulnerability within GitHub Actions. This is known by GitHub but they have refused to fix it.</i>
 
 ### Usage:
-- Open the Actions tab of this repository
+- Fork the repository
+- Open the Actions tab of the forked repository
 - Select the workflow <b>GitHub Actions Injection Action</b>
 - Click the <b>Run Workflow &#9660;</b> dropdown
 - Input the below example command
